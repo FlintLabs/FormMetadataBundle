@@ -13,7 +13,7 @@ use FlintLabs\Bundle\FormMetadataBundle\Mapping\Field;
  * The meta data containing the configuration of the form
  * @author camm (camm@flintinteractive.com.au)
  */
-class FormMetadata 
+class FormMetadata
 {
     /**
      * @var array
