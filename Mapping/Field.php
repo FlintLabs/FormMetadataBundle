@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the Forms Annotation library
+ * This file is part of the Form Metadata library
  *
  * (c) Cameron Manderson <camm@flintinteractive.com.au>
  *
