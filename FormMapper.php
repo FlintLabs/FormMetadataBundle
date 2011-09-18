@@ -28,8 +28,11 @@ class FormMapper
      * @param $form
      * @return
      */
-    public function map($entity, $form)
+    public function buildForm($entity)
     {
+        // TODO: Build the $form
+        $form = null;
+        
         // Read the entity meta data and add to the form
         if(empty($this->readers)) return;
 
