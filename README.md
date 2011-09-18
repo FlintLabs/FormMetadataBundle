@@ -1,11 +1,11 @@
-Form Metadata reader for Symfony2
+# Form Metadata reader for Symfony2 *Experimental!*
 
 Facilitates the configuration of form fields from metadata that is defined elsewhere, such as through annotations
 in the entity.
 
-# Example
+## Example
 
-## Simple Entity
+### Simple Entity
 
     use FlintLabs\Component\FormMetadata\Mapping as Form;
     use Symfony\Component\Validator\Constraints as Assert;
@@ -24,14 +24,14 @@ in the entity.
         public $message;
     }
 
-## Updated controller
+### Updated controller
 
     class MyController
     {
         public function contactAction()
         {
             $contact = new Contact();
-            $form = $this->get('form_metadata_mapper')->buildForm($contact);
+            $form = $this->get('form_metadata.mapper')->createFormBuilder($contact);
 
             if ($request->getMethod() == 'POST') {
                 $form->bindRequest($request);
