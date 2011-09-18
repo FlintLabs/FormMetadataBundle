@@ -7,8 +7,8 @@ in the entity.
 
 ### Simple Entity
 
-    use FlintLabs\Component\FormMetadata\Mapping as Form;
-    use Symfony\Component\Validator\Constraints as Assert;
+    use FlintLabs\Bundle\FormMetadata\Configuration as Form;
+    use Symfony\Bundle\Validator\Constraints as Assert;
 
     class Contact
     {

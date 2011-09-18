@@ -7,13 +7,16 @@
  * For full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace FlintLabs\Component\FormAnnotations;
+namespace FlintLabs\Bundle\FormMetadataBundle;
 
 /**
  *
  * @author camm (camm@flintinteractive.com.au)
  */
-interface AnnotationsReaderInterface
+class AnnotationsReader
 {
-    public function getMetadata($type);
+    public function getMetadata($type)
+    {
+        // TODO: Read the metadata for the entity
+    }
 }

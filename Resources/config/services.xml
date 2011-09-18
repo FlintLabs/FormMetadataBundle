@@ -1,0 +1,22 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+
+	<parameters>
+        <parameter key="form_metadata.mapper.class">FlintLabs\Bundle\FormMetadataBundle\FormMapper</parameter>
+		<parameter key="form_metadata.reader.annotation.class">FlintLabs\Bundle\FormMetadataBundle\AnnotationsReader</parameter>
+	</parameters>
+
+    <services>
+
+		<service id="form_metadata.mapper" class="%form_metadata.mapper.class%">
+            <argument type="service" id="form.factory"/>
+			<call method="addReader">
+				<argument type="service" id="form_metadata.reader.annotation" />
+			</call>
+        </service>
+
+		<service id="form_metadata.reader.annotation" class="%form_metadata.reader.annotation.class%"/>
+    </services>
+</container>

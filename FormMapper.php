@@ -7,8 +7,9 @@
  * For full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace FlintLabs\Component\FormAnnotations;
+namespace FlintLabs\Bundle\FormMetadataBundle;
 
+use Symfony\Component\Form\FormFactory;
 /**
  * Obtains any metadata from the entity and adds it's configuration
  * to the form
@@ -20,7 +21,20 @@ class FormMapper
      * Readers that will be used to obtaining metadata
      * @var array
      */
-    protected $readers = array();
+    private $readers = array();
+
+    /**
+     * @var \Symfony\Component\Form\FormFactory
+     */
+    protected $factory;
+
+    /**
+     * @param \Symfony\Component\Form\FormFactory $factory
+     */
+    public function __construct(FormFactory $factory)
+    {
+        $this->factory = $factory;
+    }
 
     /**
      * Obtains any form metadata from the entity and adds itself to the form
@@ -28,10 +42,10 @@ class FormMapper
      * @param $form
      * @return
      */
-    public function buildForm($entity)
+    public function createFormBuilder($entity, $data = null, array $options = array())
     {
-        // TODO: Build the $form
-        $form = null;
+        // Build the $form
+        $form = $this->factory->createBuilder('form', $data, $options);
         
         // Read the entity meta data and add to the form
         if(empty($this->readers)) return;
