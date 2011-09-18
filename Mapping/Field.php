@@ -16,4 +16,5 @@ namespace FlintLabs\Component\FormAnnotations\Mapping;
 class Field 
 {
     public $type;
+    public $name;
 }

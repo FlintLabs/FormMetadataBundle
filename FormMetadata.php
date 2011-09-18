@@ -7,13 +7,35 @@
  * For full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace FlintLabs\Component\FormAnnotations
-;
+namespace FlintLabs\Component\FormAnnotations;
+use FlintLabs\Component\FormAnnotations\Mapping\Field;
 /**
- *
+ * The meta data containing the configuration of the form
  * @author camm (camm@flintinteractive.com.au)
  */
 class FormMetadata 
 {
-    protected $fields;
+    /**
+     * @var array
+     */
+    protected $fields = array();
+
+    /**
+     * Add a field configuration
+     * @param Mapping\Field $field
+     * @return void
+     */
+    public function addField(Field $field)
+    {
+        $this->fields[] = $field;
+    }
+
+    /**
+     * @return array
+     */
+    public function getFields()
+    {
+        return $this->fields;
+    }
+
 }

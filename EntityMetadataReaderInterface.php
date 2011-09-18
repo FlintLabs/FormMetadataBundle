@@ -15,5 +15,11 @@ namespace FlintLabs\Component\FormAnnotations;
  */
 interface EntityMetadataReader
 {
+    /**
+     * Read the entity and create an associated metadata
+     * @abstract
+     * @param $entity
+     * @return null|FormMetadata
+     */
     public function getMetadata($entity);
 }
