@@ -13,10 +13,13 @@ namespace FlintLabs\Bundle\FormMetadataBundle;
  *
  * @author camm (camm@flintinteractive.com.au)
  */
-class AnnotationsReader
+interface MetadataDriverInterface
 {
-    public function getMetadata($type)
-    {
-        // TODO: Read the metadata for the entity
-    }
+    /**
+     * Read the entity and create an associated metadata
+     * @abstract
+     * @param $entity
+     * @return null|FormMetadata
+     */
+    public function getMetadata($entity);
 }

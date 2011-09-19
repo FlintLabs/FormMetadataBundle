@@ -5,7 +5,7 @@
 
 	<parameters>
         <parameter key="form_metadata.mapper.class">FlintLabs\Bundle\FormMetadataBundle\FormMapper</parameter>
-		<parameter key="form_metadata.reader.annotation.class">FlintLabs\Bundle\FormMetadataBundle\AnnotationsReader</parameter>
+		<parameter key="form_metadata.reader.annotation.class">FlintLabs\Bundle\FormMetadataBundle\Driver\AnnotationsDriver</parameter>
 	</parameters>
 
     <services>
@@ -13,10 +13,10 @@
 		<service id="form_metadata.mapper" class="%form_metadata.mapper.class%">
             <argument type="service" id="form.factory"/>
 			<call method="addReader">
-				<argument type="service" id="form_metadata.reader.annotation" />
+				<argument type="service" id="form_metadata.driver.annotation" />
 			</call>
         </service>
 
-		<service id="form_metadata.reader.annotation" class="%form_metadata.reader.annotation.class%"/>
+		<service id="form_metadata.driver.annotation" class="%form_metadata.driver.annotation.class%"/>
     </services>
 </container>

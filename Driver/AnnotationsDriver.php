@@ -8,18 +8,20 @@
  * file that was distributed with this source code.
  */
 namespace FlintLabs\Bundle\FormMetadataBundle;
-
 /**
  *
  * @author camm (camm@flintinteractive.com.au)
  */
-interface EntityMetadataReader
+class AnnotationsDriver implements MetadataDriverInterface
 {
     /**
      * Read the entity and create an associated metadata
-     * @abstract
      * @param $entity
      * @return null|FormMetadata
      */
-    public function getMetadata($entity);
+    public function getMetadata($entity)
+    {
+        // TODO: Implement getMetadata() method.
+    }
+
 }
