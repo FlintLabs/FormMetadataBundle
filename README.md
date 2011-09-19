@@ -1,7 +1,7 @@
-# Form Metadata reader for Symfony2 *Experimental!*
+# Form Metadata reader for Symfony2 *Warning! Very experimental!*
 
 Facilitates the configuration of form fields from metadata that is defined elsewhere, such as through annotations
-in the entity.
+in the entity or with an external yaml file.
 
 ## Example
 
@@ -45,3 +45,34 @@ in the entity.
     }
 
 ## Installation
+
+### Update your deps file
+
+    [Form-Metadata]
+        git=git@github.com:FlintLabs/Form-Metadata.git
+        target=/bundles/FlintLabs/Bundle/FormMetadataBundle
+
+### Update your vendors
+
+    php bin/vendors update
+
+### Update your autoloader
+
+    // app/autoload.php
+    $loader->registerNamespaces(array(
+        // ...
+        'FlintLabs\\Bundle\\FormMetadataBundle' => __DIR__.'/../vendor/bundles/',
+        // ...
+    ));
+
+### Register the bundle references
+
+    // app/AppKernel.php
+    public function registerBundles()
+    {
+        return array(
+            // ...
+            new FlintLabs\Bundle\FormMetadataBundle\FlintLabsFormMetadataBundle(),
+            // ...
+        );
+    }
