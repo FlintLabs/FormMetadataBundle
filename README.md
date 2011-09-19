@@ -31,7 +31,7 @@ in the entity.
         public function contactAction()
         {
             $contact = new Contact();
-            $form = $this->get('form_metadata.mapper')->createFormBuilder($contact);
+            $form = $this->get('form_metadata.mapper')->createFormBuilder($contact)->getForm();
 
             if ($request->getMethod() == 'POST') {
                 $form->bindRequest($request);
@@ -43,3 +43,5 @@ in the entity.
             }
         }
     }
+
+## Installation

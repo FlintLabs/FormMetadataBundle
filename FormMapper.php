@@ -45,7 +45,7 @@ class FormMapper
     public function createFormBuilder($entity, $data = null, array $options = array())
     {
         // Build the $form
-        $form = $this->factory->createBuilder('form', $data, $options);
+        $formBuilder = $this->factory->createBuilder('form', $data, $options);
         
         // Read the entity meta data and add to the form
         if(empty($this->readers)) return;
@@ -59,8 +59,10 @@ class FormMapper
         // Configure the form
         $fields = $metadata->getFields();
         foreach($fields as $field) {
-            $form->add($field->name, $field->type);
+            $formBuilder->add($field->name, $field->type);
         }
+
+        return $formBuilder;
     }
 
     /**
