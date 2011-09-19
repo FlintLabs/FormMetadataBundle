@@ -14,7 +14,7 @@ making them able to deal with dynamic entity/forms (such as for use with CMS sit
     class Contact
     {
         /**
-         * @Form\Field(type='text', min_length='3')
+         * @Form\Field(type='text')
          * @Assert\NotBlank()
          */
         public $name;
