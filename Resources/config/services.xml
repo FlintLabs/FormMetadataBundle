@@ -12,7 +12,7 @@
 
 		<service id="form_metadata.mapper" class="%form_metadata.mapper.class%">
             <argument type="service" id="form.factory"/>
-			<call method="addReader">
+			<call method="addDriver">
 				<argument type="service" id="form_metadata.driver.annotation" />
 			</call>
         </service>

@@ -9,7 +9,8 @@
  */
 namespace FlintLabs\Bundle\FormMetadataBundle;
 
-use Symfony\Component\Form\FormFactory;
+use Symfony\Component\Form\FormFactory,
+FlintLabs\Bundle\FormMetadataBundle\Driver\MetadataDriverInterface;
 /**
  * Obtains any metadata from the entity and adds it's configuration
  * to the form
@@ -18,10 +19,10 @@ use Symfony\Component\Form\FormFactory;
 class FormMapper
 {
     /**
-     * Readers that will be used to obtaining metadata
+     * Drivers that will be used to obtaining metadata
      * @var array
      */
-    private $readers = array();
+    private $drivers = array();
 
     /**
      * @var \Symfony\Component\Form\FormFactory
@@ -70,8 +71,8 @@ class FormMapper
      * @param EntityMetadataReaderInterface $reader
      * @return void
      */
-    public function addReader(EntityMetadataReaderInterface $reader)
+    public function addDriver(MetadataDriverInterface $driver)
     {
-        $this->readers[] = $reader;
+        $this->drivers[] = $driver;
     }
 }
