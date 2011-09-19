@@ -13,7 +13,7 @@ namespace FlintLabs\Bundle\FormMetadataBundle\Configuration;
  * Contains the configuration elements for the field
  * @author camm (camm@flintinteractive.com.au)
  */
-class Field
+class Field extends \Doctrine\Common\Annotations\Annotation
 {
     public $type;
     public $name;

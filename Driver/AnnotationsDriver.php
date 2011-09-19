@@ -8,6 +8,7 @@
  * file that was distributed with this source code.
  */
 namespace FlintLabs\Bundle\FormMetadataBundle\Driver;
+use \FlintLabs\Bundle\FormMetadataBundle\FormMetadata;
 /**
  *
  * @author camm (camm@flintinteractive.com.au)
@@ -21,7 +22,23 @@ class AnnotationsDriver implements MetadataDriverInterface
      */
     public function getMetadata($entity)
     {
-        // TODO: Implement getMetadata() method.
+        $metadata = new FormMetadata();
+
+        $reader = new \Doctrine\Common\Annotations\AnnotationReader();
+        $reflectionClass = new \ReflectionClass(get_class($entity));
+
+        $properties = $reflectionClass->getProperties();
+        foreach($properties as $property) {
+            $field = $reader->getPropertyAnnotation($property, 'FlintLabs\Bundle\FormMetadataBundle\Configuration\Field');
+            if(!empty($field)) {
+                if(empty($field->name)) {
+                    $field->name = $property->getName();
+                }
+                $metadata->addField($field);
+            }
+        }
+
+        return $metadata;
     }
 
 }
