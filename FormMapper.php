@@ -49,13 +49,15 @@ class FormMapper
         $formBuilder = $this->factory->createBuilder('form', $data, $options);
         
         // Read the entity meta data and add to the form
-        if(empty($this->readers)) return;
+        if(empty($this->drivers)) return $formBuilder;
 
         // Look to the readers to find metadata
-        foreach ($this->readers as $reader) {
-            $metadata = $reader->getMetadata($entity);
+        foreach ($this->drivers as $driver) {
+            $metadata = $driver->getMetadata($entity);
             if(!empty($metadata)) break;
         }
+
+        if(empty($metadata)) return $formBuilder;
 
         // Configure the form
         $fields = $metadata->getFields();
