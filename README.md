@@ -1,11 +1,12 @@
 # Form Metadata reader for Symfony2 *Warning! Very experimental!*
 
 Facilitates the configuration of form fields from metadata that is defined elsewhere, such as through annotations
-in the entity or with an external yaml file.
+in the entity or with an external yaml file. Allows for more generic handling of form types through controllers,
+making them able to deal with dynamic entity/forms (such as for use with CMS sites).
 
-## Example
+## Annotations Example
 
-### Simple Entity
+### Entity with some basic form annotations
 
     use FlintLabs\Bundle\FormMetadata\Configuration as Form;
     use Symfony\Bundle\Validator\Constraints as Assert;
@@ -24,7 +25,7 @@ in the entity or with an external yaml file.
         public $message;
     }
 
-### Updated controller
+### Simple controller
 
     class MyController
     {
