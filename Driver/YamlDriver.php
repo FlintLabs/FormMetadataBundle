@@ -12,7 +12,7 @@ namespace FlintLabs\Bundle\FormMetadataBundle;
  *
  * @author camm (camm@flintinteractive.com.au)
  */
-class YamlReader implements EntityMetadataReader
+class YamlDriver implements MetadataDriverInterface
 {
     /**
      * Read the entity and create an associated metadata
