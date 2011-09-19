@@ -13,7 +13,7 @@ in the entity.
     class Contact
     {
         /**
-         * @Form\Field(type='text')
+         * @Form\Field(type='text', min_length='3')
          * @Assert\NotBlank()
          */
         public $name;
