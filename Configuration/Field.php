@@ -17,4 +17,5 @@ class Field
 {
     public $type;
     public $name;
+    public $options = array();
 }

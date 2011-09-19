@@ -59,7 +59,7 @@ class FormMapper
         // Configure the form
         $fields = $metadata->getFields();
         foreach($fields as $field) {
-            $formBuilder->add($field->name, $field->type);
+            $formBuilder->add($field->name, $field->type, $field->options);
         }
 
         return $formBuilder;
