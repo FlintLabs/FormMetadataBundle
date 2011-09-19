@@ -18,4 +18,9 @@ class Field extends \Doctrine\Common\Annotations\Annotation
     public $type;
     public $name;
     public $options = array();
+
+    public function __set($name, $value)
+    {
+        $this->options[$name] = $value;
+    }
 }
