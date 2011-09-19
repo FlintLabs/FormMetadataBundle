@@ -8,7 +8,7 @@ making them able to deal with dynamic entity/forms (such as for use with CMS sit
 
 ### Entity with some basic form annotations
 
-    use FlintLabs\Bundle\FormMetadata\Configuration as Form;
+    use FlintLabs\Bundle\FormMetadataBundle\Configuration as Form;
     use Symfony\Bundle\Validator\Constraints as Assert;
 
     class Contact
