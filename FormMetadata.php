@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 namespace FlintLabs\Bundle\FormMetadataBundle;
-use FlintLabs\Bundle\FormMetadataBundle\Mapping\Field;
+use FlintLabs\Bundle\FormMetadataBundle\Configuration\Field;
 /**
  * The meta data containing the configuration of the form
  * @author camm (camm@flintinteractive.com.au)
