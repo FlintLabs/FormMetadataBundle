@@ -6,11 +6,11 @@ making them able to deal with dynamic entity/forms (such as for use with CMS sit
 
 ## Annotations Example
 
-**Builder**
+**Standard form builder**
 
     ->add('dueDate', 'date', array('widget' => 'single_text'))
 
-**Annotation**
+**Using annotations in your entity**
 
     /**
      * @Form\Field(type="date", widget="single_text")
