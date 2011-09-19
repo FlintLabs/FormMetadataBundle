@@ -20,7 +20,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class FlintLabsFlintCMSExtension extends Extension
+class FlintLabsFormMetadataExtension extends Extension
 {
     /**
      * {@inheritDoc}
@@ -36,6 +36,6 @@ class FlintLabsFlintCMSExtension extends Extension
 
     public function getAlias()
     {
-        return 'form_metadata';
+        return 'flint_labs_form_metadata';
     }
 }

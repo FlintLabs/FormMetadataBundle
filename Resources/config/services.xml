@@ -17,6 +17,6 @@
 			</call>
         </service>
 
-		<service id="form_metadata.driver.annotation" class="%form_metadata.driver.annotation.class%"/>
+		<service id="form_metadata.driver.annotation" class="%form_metadata.reader.annotation.class%"/>
     </services>
 </container>
