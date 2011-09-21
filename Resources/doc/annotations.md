@@ -64,3 +64,50 @@ TODO
      */
 
 **Options**
+
+### csrf
+
+### date
+
+### datetime
+
+### email
+
+### entity
+
+### file
+
+### field
+
+### hidden
+
+### integer
+
+### language
+
+### locale
+
+### money
+
+### number
+
+### password
+
+### percent
+
+### radio
+
+### repeated
+
+### search
+
+### text
+
+### textarea
+
+### time
+
+### timezone
+
+### url
+
