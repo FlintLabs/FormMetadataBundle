@@ -11,14 +11,37 @@ namespace FlintLabs\Bundle\FormMetadataBundle\Configuration;
 
 /**
  * Contains the configuration elements for the field
+ *
+ * e.g. @Form\Field(type="text", foo="bar")
+ *
  * @author camm (camm@flintinteractive.com.au)
  */
 class Field extends \Doctrine\Common\Annotations\Annotation
 {
+    /**
+     * The type of form type to add
+     * @var string
+     */
     public $type;
+
+    /**
+     * The parameter name
+     * @var string
+     */
     public $name;
+
+    /**
+     * The options to pass through
+     * @var array
+     */
     public $options = array();
 
+    /**
+     * Magic method for passing options through the annotation that are undefined
+     * @param $name
+     * @param $value
+     * @return void
+     */
     public function __set($name, $value)
     {
         $this->options[$name] = $value;
