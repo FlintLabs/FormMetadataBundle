@@ -135,7 +135,22 @@ TODO
 
 ### entity
 
-TODO
+    /**
+     * @Form\Field("entity", class="AcmeHelloBundle:User", property="name")
+     */
+    private $users;
+
+** Options **
+
+* class
+* property
+* multiple [bool, default: false]
+* expanded [bool, default: false]
+* preferred_choices [array]
+* required [bool, default: true]
+* label [string]
+* read_only [bool, default: false]
+* error_bubbling [bool, default: false]
 
 ### file
 
@@ -296,12 +311,25 @@ TODO
 ### repeated
 
     /**
-     * @Form\Field("repeated")
+     * @Form\Field("repeated", options={
+     *   type="password",
+     *   invalid_message="The password fields must match",
+     *   options={
+     *     label="Password"
+     *   }
+     * })
      */
+    private $password
 
 **Options**
 
-TODO
+* type
+* options
+* first_name
+* second_name
+* invalid_message
+* invalid_message_parameters
+* error_bubbling [bool, default: false]
 
 ### search
 
@@ -311,7 +339,12 @@ TODO
 
 **Options**
 
-TODO
+* max_length
+* required [bool, default: true]
+* label [string]
+* read_only [bool, default: false]
+* trim
+* error_bubbling [bool, default: false]
 
 ### text
 
