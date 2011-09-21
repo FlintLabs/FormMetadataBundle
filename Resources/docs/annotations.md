@@ -9,6 +9,7 @@ This collection shows some basic use of the standard form types that come with S
     /**
      * @Form\Field("birthday")
      */
+    private $dateOfBirth;
 
 **Options**
 
@@ -25,8 +26,12 @@ This collection shows some basic use of the standard form types that come with S
 ### checkbox
 
     /**
-     * @Form\Field("checkbox", options={label="Example checkbox label", required="false"})
+     * @Form\Field("checkbox", options={
+     *   label="Example checkbox label",
+     *   required="false"
+     * })
      */
+    private $terms;
 
 **Options**
 
@@ -39,8 +44,14 @@ This collection shows some basic use of the standard form types that come with S
 ### choice
 
     /**
-     * @Form\Field("choice", options={choices={m="Male",f="Female"}})
+     * @Form\Field("choice", options={
+     *   choices={
+     *     m="Male",
+     *     f="Female"
+     *   }
+     *  })
      */
+    private $gender;
 
 **Options**
 
@@ -62,6 +73,7 @@ TODO
     /**
      * @Form\Field("country")
      */
+    private $country;
 
 **Options**
 
@@ -82,6 +94,7 @@ TODO
     /**
      * @Form\Field("date")
      */
+    private $date;
 
 **Options**
 
@@ -100,6 +113,7 @@ TODO
     /**
      * @Form\Field("datetime")
      */
+    private $created;
 
 **Options**
 
@@ -119,6 +133,7 @@ TODO
     /**
      * @Form\Field("email")
      */
+    private $emailAddress;
 
 **Options**
 
@@ -131,16 +146,21 @@ TODO
     /**
      * @Form\Field("file")
      */
+    private $attachment;
 
 **Options**
 
-TODO
+* required [bool, default: true]
+* label [string]
+* read_only [bool, default: false]
+* error_bubbling [bool, default: false]
 
 ### hidden
 
     /**
      * @Form\Field("hidden")
      */
+    private $id;
 
 **Options**
 
@@ -151,6 +171,7 @@ TODO
     /**
      * @Form\Field("integer")
      */
+    private $numOfChildren;
 
 **Options**
 
@@ -165,6 +186,7 @@ TODO
     /**
      * @Form\Field("language")
      */
+    private $language;
 
 **Options**
 
@@ -181,6 +203,7 @@ TODO
     /**
      * @Form\Field("locale")
      */
+    private $preferredLocale;
 
 * multiple [bool, default: false]
 * expanded [bool, default: false]
@@ -197,6 +220,7 @@ TODO
     /**
      * @Form\Field("money")
      */
+    private $value;
 
 **Options**
 
@@ -214,6 +238,7 @@ TODO
     /**
      * @Form\Field("number")
      */
+    private $numOfDependents;
 
 **Options**
 
@@ -230,6 +255,7 @@ TODO
     /**
      * @Form\Field("password")
      */
+    private $password;
 
 **Options**
 
@@ -246,6 +272,7 @@ TODO
     /**
      * @Form\Field("percent")
      */
+    private $score;
 
 **Options**
 
@@ -260,6 +287,7 @@ TODO
     /**
      * @Form\Field("radio")
      */
+    private $selectedGroup;
 
 **Options**
 
