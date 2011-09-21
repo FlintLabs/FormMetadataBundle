@@ -26,10 +26,7 @@ This collection shows some basic use of the standard form types that come with S
 ### checkbox
 
     /**
-     * @Form\Field("checkbox", options={
-     *   label="Example checkbox label",
-     *   required="false"
-     * })
+     * @Form\Field("checkbox", label="Example checkbox label", required="false")
      */
     private $terms;
 
@@ -44,12 +41,10 @@ This collection shows some basic use of the standard form types that come with S
 ### choice
 
     /**
-     * @Form\Field("choice", options={
-     *   choices={
-     *     m="Male",
-     *     f="Female"
-     *   }
-     *  })
+     * @Form\Field("choice", choices={
+     *   m="Male",
+     *   f="Female"
+     * })
      */
     private $gender;
 
@@ -92,9 +87,9 @@ TODO
 ### date
 
     /**
-     * @Form\Field("date")
+     * @Form\Field("date", widget="choice", input="datetime")
      */
-    private $date;
+    private $publishedAt;
 
 **Options**
 
@@ -107,6 +102,7 @@ TODO
 * pattern
 * data_timezone
 * user_timezone
+
 
 ### datetime
 
