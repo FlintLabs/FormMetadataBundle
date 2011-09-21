@@ -2,7 +2,7 @@
 
 This collection shows some basic use of the standard form types that come with Symfony2
 
-## Field Annotation
+## Field Annotation Reference Guide
 
 ### birthday
 
