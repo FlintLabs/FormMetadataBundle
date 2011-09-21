@@ -21,6 +21,12 @@ class FormMetadata
     protected $fields = array();
 
     /**
+     * TODO: Add in support for field groups
+     * @var array
+     */
+    protected $groups = array();
+
+    /**
      * Add a field configuration
      * @param Mapping\Field $field
      * @return void

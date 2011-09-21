@@ -14,6 +14,7 @@ FlintLabs\Bundle\FormMetadataBundle\Driver\MetadataDriverInterface;
 /**
  * Obtains any metadata from the entity and adds it's configuration
  * to the form
+ * TODO: Support field groups
  * @author camm (camm@flintinteractive.com.au)
  */
 class FormMapper
@@ -62,7 +63,9 @@ class FormMapper
         // Configure the form
         $fields = $metadata->getFields();
         foreach($fields as $field) {
-            $formBuilder->add($field->name, $field->type, $field->options);
+            // TODO: Detect "new x()" in field value or type option for AbstractType creation
+            // TODO: Detect references to "%service.id%" for service constructor dependency
+            $formBuilder->add($field->name, $field->value, $field->options);
         }
 
         return $formBuilder;

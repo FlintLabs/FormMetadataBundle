@@ -12,12 +12,19 @@ namespace FlintLabs\Bundle\FormMetadataBundle\Configuration;
 /**
  * Contains the configuration elements for the field
  *
- * e.g. @Form\Field(type="text", foo="bar")
+ * e.g. @Form\Field("text", foo="bar")
  *
  * @author camm (camm@flintinteractive.com.au)
  */
 class Field extends \Doctrine\Common\Annotations\Annotation
 {
+
+    /**
+     * Default for when a type is not specified
+     * @var string
+     */
+    public $value;
+
     /**
      * The type of form type to add
      * @var string

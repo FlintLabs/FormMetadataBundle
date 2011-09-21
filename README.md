@@ -1,8 +1,11 @@
 # Form Metadata reader for Symfony2
 
-Facilitates the configuration of form fields from metadata that is defined elsewhere, such as through annotations
+Facilitates the basic configuration of form fields from metadata that is defined elsewhere, such as through annotations
 in the entity or with an external yaml file (TODO). Allows for more generic handling of form types through controllers,
 making them able to deal with dynamic entity/forms (such as for use with CMS sites).
+
+Note: People may want to consider the use of Symfony2 Abstract Forms to configure their forms external to the controller
+as a best practice.
 
 ## Annotations Example
 
@@ -24,13 +27,13 @@ making them able to deal with dynamic entity/forms (such as for use with CMS sit
     class Contact
     {
         /**
-         * @Form\Field(type='text')
+         * @Form\Field("text")
          * @Assert\NotBlank()
          */
         public $name;
 
         /**
-         * @Form\Field(type='textarea')
+         * @Form\Field("textarea")
          */
         public $message;
     }
