@@ -18,7 +18,7 @@ as a best practice.
 **Using annotations in your entity**
 
     /**
-     * @Form\Field(type="date", widget="single_text")
+     * @Form\Field("date", widget="single_text")
      */
 
 ### Entity with some basic form annotations
