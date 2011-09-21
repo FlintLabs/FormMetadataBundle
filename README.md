@@ -4,7 +4,7 @@ Facilitates the basic configuration of form fields from metadata that is defined
 in the entity or with an external yaml file (TODO). Allows for more generic handling of form types through controllers,
 making them able to deal with dynamic entity/forms (such as for use with CMS sites).
 
-See the [annotations reference](https://github.com/FlintLabs/FormMetadataBundle/blob/master/Resources/docs/annotations.md)
+See the form fields [Annotations Reference](https://github.com/FlintLabs/FormMetadataBundle/wiki/Annotations-reference)
 
 Note: People may want to consider the use of Symfony2 Abstract Forms to configure their forms external to the controller
 as a best practice.
