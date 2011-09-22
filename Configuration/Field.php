@@ -26,12 +26,6 @@ class Field extends \Doctrine\Common\Annotations\Annotation
     public $value;
 
     /**
-     * The type of form type to add
-     * @var string
-     */
-    public $type;
-
-    /**
      * The parameter name
      * @var string
      */
