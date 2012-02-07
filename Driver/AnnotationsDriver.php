@@ -25,20 +25,23 @@ class AnnotationsDriver implements MetadataDriverInterface
         $metadata = new FormMetadata();
 
         $reader = new \Doctrine\Common\Annotations\AnnotationReader();
+
         $reflectionClass = new \ReflectionClass(get_class($entity));
 
-        $properties = $reflectionClass->getProperties();
-        foreach($properties as $property) {
-            $field = $reader->getPropertyAnnotation($property, 'FlintLabs\Bundle\FormMetadataBundle\Configuration\Field');
-            if(!empty($field)) {
-                if(empty($field->name)) {
-                    $field->name = $property->getName();
+        while (is_object($reflectionClass)) {
+            $properties = $reflectionClass->getProperties();
+            foreach($properties as $property) {
+                $field = $reader->getPropertyAnnotation($property, 'FlintLabs\Bundle\FormMetadataBundle\Configuration\Field');
+                if(!empty($field)) {
+                    if(empty($field->name)) {
+                        $field->name = $property->getName();
+                    }
+                    $metadata->addField($field);
                 }
-                $metadata->addField($field);
             }
+            $reflectionClass = $reflectionClass->getParentClass();
         }
 
         return $metadata;
     }
-
 }
