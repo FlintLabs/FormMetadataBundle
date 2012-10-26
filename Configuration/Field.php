@@ -14,6 +14,7 @@ namespace FlintLabs\Bundle\FormMetadataBundle\Configuration;
  *
  * e.g. @Form\Field("text", foo="bar")
  *
+ * @Annotation
  * @author camm (camm@flintinteractive.com.au)
  */
 class Field extends \Doctrine\Common\Annotations\Annotation
