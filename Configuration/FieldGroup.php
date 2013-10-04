@@ -6,7 +6,7 @@
 
 /**
  * e.g. @Form\FieldGroup('example')
- * @author camm (camm@flintinteractive.com.au)
+ * @author camm (camm@flintinteractive.com.au), european(info@nils-werner.com)
  */
 class FieldGroup 
 {

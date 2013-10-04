@@ -11,7 +11,7 @@ namespace FlintLabs\Bundle\FormMetadataBundle\Driver;
 use \FlintLabs\Bundle\FormMetadataBundle\FormMetadata;
 /**
  *
- * @author camm (camm@flintinteractive.com.au)
+ * @author camm (camm@flintinteractive.com.au), european(info@nils-werner.com)
  */
 class AnnotationsDriver implements MetadataDriverInterface
 {
@@ -32,7 +32,13 @@ class AnnotationsDriver implements MetadataDriverInterface
             $properties = $reflectionClass->getProperties();
             foreach($properties as $property) {
                 $field = $reader->getPropertyAnnotation($property, 'FlintLabs\Bundle\FormMetadataBundle\Configuration\Field');
-                if(!empty($field)) {
+				$fieldGroup = $reader->getPropertyAnnotation($property, 'FlintLabs\Bundle\FormMetadataBundle\Configuration\FieldGroup');
+                if (!empty($fieldGroup) && !empty($field)) {
+                    if (empty($field->name)) {
+                        $field->name = $property->getName();
+                    }
+                    $metadata->addGroup($fieldGroup, $field);
+                } elseif(!empty($field)) {
                     if(empty($field->name)) {
                         $field->name = $property->getName();
                     }
