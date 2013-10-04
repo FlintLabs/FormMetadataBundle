@@ -43,7 +43,7 @@ class FormMapper
      * @param $form
      * @return
      */
-    public function createFormBuilder($entity, $data = null, array $options = array())
+    public function createFormBuilder($data = null, array $options = array())
     {
         // Build the $form
         $formBuilder = $this->factory->createBuilder('form', $data, $options);
@@ -53,7 +53,7 @@ class FormMapper
 
         // Look to the readers to find metadata
         foreach ($this->drivers as $driver) {
-            $metadata = $driver->getMetadata($entity);
+            $metadata = $driver->getMetadata($data);
             if(!empty($metadata)) break;
         }
 
