@@ -11,7 +11,7 @@ namespace FlintLabs\Bundle\FormMetadataBundle;
 use FlintLabs\Bundle\FormMetadataBundle\Configuration\Field;
 /**
  * The meta data containing the configuration of the form
- * @author camm (camm@flintinteractive.com.au)
+ * @author camm (camm@flintinteractive.com.au), european(info@nils-werner.com)
  */
 class FormMetadata
 {
@@ -21,7 +21,6 @@ class FormMetadata
     protected $fields = array();
 
     /**
-     * TODO: Add in support for field groups
      * @var array
      */
     protected $groups = array();
@@ -42,6 +41,29 @@ class FormMetadata
     public function getFields()
     {
         return $this->fields;
+    }
+	
+	/**
+     * 
+     * @param FieldGroup $fieldGroup
+	 * @param Field $field
+     */
+    public function addGroup(FieldGroup $fieldGroup, Field $field)
+    {
+        if(!empty($this->groups[$fieldGroup->value])) {
+            $this->groups[$fieldGroup->value][] = $field;
+        } else {
+            $this->groups[$fieldGroup->value][] = $field;
+        }
+    }
+
+    /**
+     * 
+     * @return array
+     */
+    public function getGroups()
+    {
+        return $this->groups;
     }
 
 }

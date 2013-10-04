@@ -21,6 +21,13 @@ as a best practice.
      * @Form\Field("date", widget="single_text")
      */
 
+**Group Examlpe**
+
+    /**
+     * @Form\Field("date", widget="single_text")
+     * @Form\FieldGroup("example")
+     */
+
 ### Entity with some basic form annotations
 
     use FlintLabs\Bundle\FormMetadataBundle\Configuration as Form;
